@@ -4,16 +4,16 @@ class DatabaseConfig {
     
     public static function getConnection() {
         if (self::$pdo === null) {
-            // $host = "localhost:3306";
-            // $username = "smart";
-            // $password = "Smart@123";
-            // $dbname = "db_tugas_akhir";
+            $host = "localhost:3306";
+            $username = "smart";
+            $password = "Smart@123";
+            $dbname = "db_tugas_akhir";
 
             // Macbook
-            $host = "localhost:3306";
-            $username = "admin";
-            $password = "supersecret";
-            $dbname = "db_pemweb_2";
+            // $host = "localhost:3306";
+            // $username = "admin";
+            // $password = "supersecret";
+            // $dbname = "db_pemweb_2";
             
             try {
                 self::$pdo = new PDO(

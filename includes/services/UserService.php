@@ -21,12 +21,12 @@ class UserService {
         return $this->userRepository->findById($id);
     }
     
-    public function register($name, $username, $password, $passwordStr) {
+    public function register($name, $username, $password, $passwordStr, $status) {
         if ($this->userRepository->findByUsername($username)) {
             throw new Exception("Username sudah terdaftar");
         }
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-        $this->userRepository->createUser($name, $username, $hashedPassword, $passwordStr);
+        $this->userRepository->createUser($name, $username, $hashedPassword, $passwordStr, $status);
         return true;
     }
     
