@@ -52,5 +52,9 @@ class UserService {
         $hashedPassword = password_hash($data['password'], PASSWORD_DEFAULT);
         return $this->userRepository->updateUser($id, $hashedPassword, $data);
     }
+
+    public function countAll() {
+        return $this->userRepository->countAll();
+    }
 }
 ?>

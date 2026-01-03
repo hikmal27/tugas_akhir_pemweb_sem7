@@ -58,5 +58,11 @@ class UserRepository {
             ':status' => $data['status']
         ]);
     }
+
+    public function countAll() {
+        $stmt = $this->pdo->prepare("SELECT COUNT(*) FROM ms_users");
+        $stmt->execute();
+        return $stmt->fetchColumn();
+    }
 }
 ?>
